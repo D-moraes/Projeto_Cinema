@@ -22,7 +22,26 @@ const Ingressos = () => {
     }
 
     const fimlesDisponiveis = items.filter(item => item.disponivel);
+    const carrinho = items.filter(item => item.quantidade >0);
 
+    const subtotal = carrinho.reduce((ac, item) => ac + item.preco * item.quantidade,0);
+    const total = subtotal > 0 ? subtotal: 0;
+
+    const confirmarPedido = () => {
+        setEnviar(true);
+        setStatus("Realizando compra");
+        setTimeout(() => {
+            setStatus("Pocessando")
+            setEnviar(false);
+        },5000);
+        setTimeout(()=> {
+            setStatus("Compra realizada com sucesso!")
+            setEnviar(false)
+        }, 10000);
+        }
+
+
+        
   return (
     <>
       
