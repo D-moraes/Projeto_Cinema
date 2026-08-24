@@ -4,7 +4,7 @@ import Ingressos from './components/Ingressos'
 const App = () => {
   return (
     <>
-      <Ingressos/>
+       <Ingressos/>
     </>
   )
 }
